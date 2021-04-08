@@ -1,0 +1,10 @@
+(library
+  (name literary_zarith)
+  (public_name literary_zarith)
+  (libraries zarith))
+
+(rule
+ (targets lz.ml)
+ (deps    (:gen ../gen/gen.exe))
+ (action  (run %{gen} %{targets})))
+
